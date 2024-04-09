@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Revised Citation Repository Project- Still working on MERN Fullstack App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
