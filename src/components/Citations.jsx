@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import CitationItem from '../components/CitationItem';
+import CitationItem from './CitationItem';
 import { DUMMY_CITATIONS } from '../data';
 
-const UserCitations = () => {
+const Citations = () => {
   const [citations, setCitations] = useState(DUMMY_CITATIONS);
   return (
     <section className='citations'>
@@ -43,4 +43,4 @@ const UserCitations = () => {
   );
 };
 
-export default UserCitations;
+export default Citations;
