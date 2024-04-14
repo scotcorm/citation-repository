@@ -26,13 +26,22 @@ const Footer = () => {
         <li>
           <Link to='citations/licenses/:CCBYNCND'>CC BY-NC-ND 4.0</Link>
         </li>
+        <li>
+          <a
+            href='https://creativecommons.org/share-your-work/cclicenses/'
+            target='_blank'
+          >
+            About CC Licenses
+          </a>
+        </li>
       </ul>
+      <hr></hr>
       <div className='footer_copyright'>
-        <a href='https://creativecommons.org/share-your-work/cclicenses/'>
-          About CC Licenses
-        </a>
-        <a href='https://creativecommons.org/licenses/by-nc/4.0/'>
-          Some Rights Reserved: This site is licensed CC BY-NC 4.0
+        <a
+          href='https://creativecommons.org/licenses/by-nc-sa/4.0/'
+          target='_blank'
+        >
+          Some Rights Reserved: This site is licensed CC BY-NC-SA 4.0
         </a>
       </div>
     </footer>

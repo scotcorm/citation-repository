@@ -13,10 +13,12 @@ const CitationItem = ({
   userID,
   thumbnail,
 }) => {
-  const shortNotes = notes.length > 90 ? notes.substr(0, 90) + '...' : notes;
+  const shortCreator =
+    creator.length > 20 ? creator.substr(0, 20) + '...' : creator;
+  const shortNotes = notes.length > 20 ? notes.substr(0, 20) + '...' : notes;
   const shortTitle = title.length > 20 ? title.substr(0, 20) + '...' : title;
   const shortSource =
-    source.length > 30 ? source.substr(0, 30) + '...' : source;
+    source.length > 20 ? source.substr(0, 20) + '...' : source;
   const shortSourceUrl =
     sourceUrl.length > 20 ? sourceUrl.substr(0, 20) + '...' : sourceUrl;
   return (
@@ -29,7 +31,7 @@ const CitationItem = ({
           <h3>Title: {shortTitle}</h3>
         </Link>
         <Link to={`/citations/${citationID}`}>
-          <p>Creator: {creator}</p>
+          <p>Creator: {shortCreator}</p>
           <p>Source: {shortSource}</p>
           <p>License: {license}</p>
           <p>SourceURL: {shortSourceUrl}</p>

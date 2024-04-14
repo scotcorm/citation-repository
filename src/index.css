@@ -258,10 +258,12 @@ footer {
 /* ==================================================  home  ========================================== */
 
 /* ==================================================  citations  ========================================== */
+
 .citations_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
+  max-width: 1600px;
 }
 
 .citation {
@@ -500,6 +502,7 @@ textarea {
 
 .profile_details h1 {
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .form.profile_form {
@@ -652,6 +655,17 @@ textarea {
   }
 
   .footer_licenses {
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 2rem;
+    align-items: center;
+    /* justify-items: center; */
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .footer_copyright {
     flex-direction: column;
   }
 
