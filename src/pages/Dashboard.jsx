@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { DUMMY_CITATIONS } from '../data';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/userContext';
 
 const Dashboard = () => {
   const [citations, setCitations] = useState(DUMMY_CITATIONS);
+
+  const navigate = useNavigate();
+
+  const { currentUser } = useContext(UserContext);
+  const token = currentUser?.token;
+
+  //redirect to login page for any user who isn't logged in
+  useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    }
+  }, []);
+
   return (
     <section className='dashboard'>
       {citations.length ? (

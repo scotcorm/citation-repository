@@ -1,25 +1,50 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import CitationItem from './CitationItem';
-import { DUMMY_CITATIONS } from '../data';
+import Loader from '../components/Loader';
 
 const Citations = () => {
-  const [citations, setCitations] = useState(DUMMY_CITATIONS);
+  const [citations, setCitations] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchCitations = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BASE_URL}/citations`
+        );
+        setCitations(response?.data);
+      } catch (err) {
+        console.log(err);
+      }
+
+      setIsLoading(false);
+    };
+    fetchCitations();
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <section className='citations'>
       {citations.length > 0 ? (
         <div className='container citations_container'>
           {citations.map(
             ({
-              id,
+              _id: id,
               thumbnail,
               license,
               title,
               creator,
               source,
               sourceUrl,
-              notes,
-              userID,
+              user,
+              createdAt,
+              description,
             }) => (
               <CitationItem
                 key={id}
@@ -30,8 +55,9 @@ const Citations = () => {
                 creator={creator}
                 source={source}
                 sourceUrl={sourceUrl}
-                notes={notes}
-                userID={userID}
+                userID={user}
+                createdAt={createdAt}
+                description={description}
               />
             )
           )}

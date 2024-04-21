@@ -18,7 +18,7 @@ const UserCitations = () => {
               creator,
               source,
               sourceUrl,
-              notes,
+              description,
               userID,
             }) => (
               <CitationItem
@@ -30,7 +30,7 @@ const UserCitations = () => {
                 creator={creator}
                 source={source}
                 sourceUrl={sourceUrl}
-                notes={notes}
+                description={description}
                 userID={userID}
               />
             )
