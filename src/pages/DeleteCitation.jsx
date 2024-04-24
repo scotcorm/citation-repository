@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/userContext';
+import { Link } from 'react-router-dom';
 
 const DeleteCitation = () => {
   const navigate = useNavigate();
@@ -15,11 +16,7 @@ const DeleteCitation = () => {
     }
   }, []);
 
-  return (
-    <div>
-      <h1>Delete</h1>
-    </div>
-  );
+  return <Link className='btn sm danger'>Delete</Link>;
 };
 
 export default DeleteCitation;

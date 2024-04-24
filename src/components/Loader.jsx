@@ -7,7 +7,7 @@ const Loader = () => {
       <div className='loader_image'>
         {/* <img src={LoadingGif} alt='' /> */}
 
-        <i className='fa fa-spinner fa-pulse fa-3x fa-fw text-primary' />
+        {/* <i className='fa fa-spinner fa-pulse fa-3x fa-fw text-primary' /> */}
         <p>Loading...</p>
       </div>
     </div>
